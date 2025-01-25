@@ -1,0 +1,205 @@
+@font-face {
+  font-family: "JetBrainsMonoNerdFont";
+  src: local("JetBrainsMonoNerdFont"),
+  url("../font/JetBrainsMonoNerdFont-Medium.ttf") format("truetype");
+}
+
+.nerdfont {
+  font-family: "JetBrainsMonoNerdFont";
+}
+
+@media screen and (min-width: 500px) {
+  :root {
+    --content-min-width: 50vw;
+    --content-max-width: 85vw;
+    --header-height: 5vh;
+    --footer-height: 10vh;
+    --main-height: calc(100vh - var(--header-height) - var(--footer-height))
+  }
+}
+
+@media screen and (min-width: 1300px) {
+  :root {
+    --content-min-width: 50vw;
+    --content-max-width: 50vw;
+    --header-height: 5vh;
+    --footer-height: 10vh;
+    --main-height: calc(100vh - var(--header-height) - var(--footer-height))
+  }
+}
+
+html {
+  font-family: Noto, sans-serif;
+  background: var(--main-background);
+  width: 100%;
+}
+
+
+@media screen and (min-width: 500px) {
+  html {
+    font-size: 68%;
+  }
+}
+
+@media screen and (min-width: 1300px) {
+  html {
+    font-size: 50%;
+  }
+}
+
+
+body {
+  font-size: calc(14px + 2 * ((100vw - 300px) / (1600 - 300)));
+  height: 100vh;
+}
+
+
+
+body div.parent-container {
+  width: 100%;
+  height: 100vh;
+  background: var(--main-background);
+  display: flex;
+  flex-direction: column;
+}
+
+header.header {
+  background: var(--nav-background);
+  height: calc(var(--header-height) - 1px);
+  border-bottom: 1px solid var(--nav-border);
+
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+nav.header-nav {
+  min-width: var(--content-min-width);
+  max-width: var(--content-max-width);
+  height: 100%;
+  background: transparent;
+}
+
+ul.header-navlist {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  align-content: center;
+  height: 100%;
+  background: transparent;
+}
+
+ul.header-navlist li {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+  background: transparent;
+}
+
+li.header-navlist--item a {
+  color: var(--nav-color);
+  font-family: "Noto Sans", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  border: none;
+  cursor: pointer;
+  font-size: 1.3em;
+  background: transparent;
+}
+
+li.header-navlist--item a:focus,
+li.header-navlist--item a:active,
+li.header-navlist--item a:hover {
+  animation-name: color-shift;
+  animation-duration: 0.4s;
+  animation-fill-mode: both;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  background: var(--main-background);
+  color: var(--main-color);
+  border: var(--main-border);
+  height: var(--main-height);
+  scrollbar-width: thin;
+}
+
+section {
+  position: relative;
+  min-width: var(--content-min-width);
+  max-width: var(--content-max-width);
+  margin: auto;
+  padding: 1rem 0;
+  background: transparent;
+  height: var(--main-height);
+  overflow: auto;
+  scrollbar-width: none;
+}
+
+
+footer.footer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: var(--footer-height);
+  background: var(--nav-background);
+  border-top: 1px solid var(--nav-border);
+  align-items: center;
+}
+
+nav.footer-nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 0.5rem;
+  color: var(--muted);
+  height: 100%;
+  min-width: var(--content-min-width);
+  max-width: var(--content-max-width);
+  padding-top: 4rem;
+}
+
+ul.footer-navlist {
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  padding-right: 0.5rem;
+}
+
+li.footer-navlist--item p {
+  color: var(--muted);
+}
+
+li.footer-navlist--item a {
+  font-family: JetbrainsMonoNerdFont;
+  color: var(--muted);
+  flex-grow: 0;
+  border: none;
+  cursor: pointer;
+  font-size: 1.3em;
+  background: transparent;
+}
+
+li.footer-navlist--item a:focus,
+li.footer-navlist--item a:active,
+li.footer-navlist--item a:hover {
+  animation-name: color-shift;
+  animation-duration: 0.2s;
+  animation-fill-mode: both;
+}
+
+.selected {
+  animation-name: color-shift;
+  animation-duration: 0.2s;
+  animation-fill-mode: both;
+}
+
+@keyframes color-shift {
+  to {color: var(--brand-almost-white);}
+}
+

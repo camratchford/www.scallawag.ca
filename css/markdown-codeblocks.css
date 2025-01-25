@@ -1,0 +1,108 @@
+/*!
+  Name: Markdown-Codeblocks
+  Author: scallawag.ca
+  Inspired, built upon:
+    - Jetbrains Darkula Theme
+    - stackoverflow.com Dark Theme
+*/
+
+pre code.markdown-codeblocks {
+  display: block;
+  overflow-x: auto;
+  padding: 1em;
+
+}
+.markdown-codeblocks {
+  color: #b8b7b5;
+  background: #1e1f22
+}
+
+code.markdown-codeblocks .hljs-subst {
+  color: #ffffff
+}
+code.markdown-codeblocks .hljs-comment {
+  color: #999999
+}
+code.markdown-codeblocks .hljs-keyword,
+code.markdown-codeblocks .hljs-selector-tag,
+code.markdown-codeblocks .hljs-meta .hljs-keyword,
+code.markdown-codeblocks .hljs-doctag,
+code.markdown-codeblocks .hljs-section {
+  color: #c46638
+}
+code.markdown-codeblocks .hljs-attr {
+  color: #88aece
+}
+code.markdown-codeblocks .hljs-attribute {
+  color: #c59bc1
+}
+code.markdown-codeblocks .hljs-name,
+code.markdown-codeblocks .hljs-type,
+code.markdown-codeblocks .hljs-number,
+code.markdown-codeblocks .hljs-selector-id,
+code.markdown-codeblocks .hljs-quote,
+code.markdown-codeblocks .hljs-template-tag {
+  color: #c46638
+}
+code.markdown-codeblocks .hljs-selector-class {
+  color: #88aece
+}
+code.markdown-codeblocks .hljs-string,
+code.markdown-codeblocks .hljs-regexp,
+code.markdown-codeblocks .hljs-symbol,
+code.markdown-codeblocks .hljs-variable,
+code.markdown-codeblocks .hljs-template-variable,
+code.markdown-codeblocks .hljs-link,
+code.markdown-codeblocks .hljs-selector-attr {
+  color: #68a670
+}
+code.markdown-codeblocks .hljs-meta,
+code.markdown-codeblocks .hljs-selector-pseudo {
+  color: #aeab5e
+}
+
+code.markdown-codeblocks .hljs-meta .hljs-params {
+  color: #b8b7b5;
+}
+
+code.markdown-codeblocks .hljs-built_in {
+  color: #8888c6
+}
+code.markdown-codeblocks .hljs-title,
+code.markdown-codeblocks .hljs-literal {
+  color: #6a94ff
+}
+code.markdown-codeblocks .hljs-bullet,
+code.markdown-codeblocks .hljs-code {
+  color: #cccccc
+}
+code.markdown-codeblocks .hljs-meta .hljs-string {
+  color: #68a670
+}
+code.markdown-codeblocks .hljs-meta .hljs-string {
+  color: #68a670
+}
+
+code.markdown-codeblocks .hljs-deletion {
+  color: #de7176
+}
+code.markdown-codeblocks .hljs-addition {
+  color: #76c490
+}
+code.markdown-codeblocks .hljs-emphasis {
+  font-style: italic
+}
+code.markdown-codeblocks .hljs-strong {
+  font-weight: bold
+}
+code.markdown-codeblocks .hljs-params {
+  color: #a33821;
+}
+code.markdown-codeblocks .hljs-formula,
+code.markdown-codeblocks .hljs-operator,
+code.markdown-codeblocks .hljs-property,
+code.markdown-codeblocks .hljs-punctuation,
+code.markdown-codeblocks .hljs-tag {
+  /* purposely ignored */
+  
+}

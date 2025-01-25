@@ -1,0 +1,30 @@
+
+div.markdown-body img[src="img/mtg.png"] {
+    min-width: calc(var(--content-max-width) * 0.3);
+    max-width: calc(var(--content-max-width) * 0.3);
+}
+
+@media screen and (max-width: 600px) {
+    div.markdown-body img[src="img/mtg.png"] {
+        min-width: calc(var(--content-max-width) * 0.7);
+    }
+}
+
+
+div.markdown-body details {
+    max-width: var(--content-max-width);
+}
+
+p {
+    padding-right: 5rem;
+}
+
+.bubble {
+    padding: 0.1vw 0.3vw;
+    color: var(--main-background);
+    font-weight: 600;
+    background-color: var(--main-border);
+    border-radius: 5px;
+    width: fit-content;
+}
+
