@@ -167,8 +167,9 @@ ul.footer-navlist {
   height: 100%;
   display: flex;
   flex-direction: row;
-  gap: 1rem;
+  gap: 2rem;
   padding-right: 0.5rem;
+
 }
 
 li.footer-navlist--item p {

@@ -16,11 +16,9 @@ if (! localStorage.getItem("currentPage")) {
 
 window.mdContent = "";
 
-
-
 function setLinkAttrs() {
-    const mdLinks = markdownContent.querySelectorAll("a");
-    mdLinks.forEach(link => {
+    const allLinks = document.querySelectorAll("a");
+    allLinks.forEach(link => {
         // Had to use getAttribute because link.href prepended the origin
         let href = link.getAttribute("href");
 
@@ -62,8 +60,10 @@ function renderContent(pageName, headingLink) {
         headers: {}
     }).then(function (response) {
         if (response.data ) {
-            localStorage.setItem("previousPage", localStorage.getItem("currentPage"))
+            let curPage = localStorage.getItem("currentPage");
+            localStorage.setItem("previousPage", curPage)
             localStorage.setItem("currentPage", pageName)
+
 
             window.mdContent = response.data;
             markdownContent.innerHTML = window.marked.parse(window.mdContent);
@@ -76,7 +76,7 @@ function renderContent(pageName, headingLink) {
                 let headingToScrollTo =  document.getElementById(`${headingLink.slice(1)}`);
                 headingToScrollTo.scrollIntoView("alignToTop")
             }
-
+            markdownContent.dispatchEvent(mdRenderedEvent);
         }
         else {
             console.log(`Axios error: ${response.statusText}`)
@@ -84,26 +84,4 @@ function renderContent(pageName, headingLink) {
     });
 }
 
-const navButtons = document.querySelectorAll('li.header-navlist--item input');
-navButtons.forEach(button => {
-    button.addEventListener('click', (event)=> {
-        console.log(`Clicked ${button.value} button`);
-        renderContent(button.value);
-    })
-})
-
-window.navigation.addEventListener("navigate", (event) => {
-
-    let url = event.destination.url;
-    let queryText = url.split("/").slice(-1)[0];
-    if (queryText[0] === "?") {
-        let headingLink = "";
-        if (queryText.includes("#")) {
-            let splitQueryText = queryText.split("#");
-            queryText = splitQueryText[0];
-            headingLink = `#${splitQueryText[1]}`
-        }
-        renderContent(queryText.slice(1, -3), headingLink);
-        event.preventDefault();
-    }
-})
+window.renderContent = renderContent

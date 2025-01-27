@@ -16,3 +16,21 @@ const marked  = new Marked(
 marked.use(gfmHeadingId({prefix: "md-"}))
 window.marked = marked;
 
+
+const mdRenderedEvent = new Event("mdRendered");
+window.mdRenderedEventCallbacks = []
+
+function mdRenderedEventCallback() {
+    let currentPage = localStorage.getItem("currentPage");
+    console.log(`Rendered md: ${currentPage}`);
+}
+window.mdRenderedEventCallbacks.push(mdRenderedEventCallback);
+
+const mdBody = document.querySelector("div.markdown-body");
+mdBody.addEventListener("mdRendered", (event) => {
+
+    for (let i = 0; i < window.mdRenderedEventCallbacks.length; i++) {
+        window.mdRenderedEventCallbacks[i]();
+    }
+});
+

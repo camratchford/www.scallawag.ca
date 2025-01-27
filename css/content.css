@@ -1,3 +1,10 @@
+.markdown-body {
+    --bubble-background: var(--grey-dark);
+    --bubble-color: var(--grey-lightest);
+    --bubble-link-color: var(--brand-primary);
+    --bubble-link-hover-color: var(--brand-light);
+    --bubble-link--hover-background: var(--grey-dark);
+}
 
 div.markdown-body img[src="img/mtg.png"] {
     min-width: calc(var(--content-max-width) * 0.3);
@@ -10,7 +17,6 @@ div.markdown-body img[src="img/mtg.png"] {
     }
 }
 
-
 div.markdown-body details {
     max-width: var(--content-max-width);
 }
@@ -20,11 +26,130 @@ p {
 }
 
 .bubble {
-    padding: 0.1vw 0.3vw;
-    color: var(--main-background);
-    font-weight: 600;
-    background-color: var(--main-border);
+    color: var(--bubble-color);
+    background-color:  var(--bubble-background);
     border-radius: 5px;
     width: fit-content;
 }
+div.bubble {
+    display: block;
+    padding: 3px 5px;
+    color: var(--bubble-color);
+    font-weight: 400;
+}
 
+span.bubble {
+    display: inline-block;
+    padding: 0 5px;
+    margin: 0;
+    font-weight: 600;
+}
+
+a:has(span.bubble) span.bubble {
+    color: var(--bubble-link-color);
+    background-color:  var(--bubble-background);
+}
+
+.markdown-body span.bubble {
+    animation-name: none;
+    text-decoration: none;
+}
+
+a span.bubble:hover,
+div.bubble:has(a:hover) {
+    animation-name: bubble-dim;
+    animation-duration: 0.1s;
+    animation-fill-mode: both;
+    animation-timing-function: ease-in;
+}
+
+div.column-2-block {
+    margin: 2rem 0;
+    padding: 1rem;
+    border: 1px solid var(--nav-border);
+    border-radius: 10px;
+    background-color: var(--bubble-background);
+    display: flex;
+    flex-direction: row;
+}
+
+div.column-2-col {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    background-color: transparent;
+    place-content: space-evenly;
+}
+
+div.column-2-row {
+    display: flex;
+    flex-direction: row;
+    background-color: transparent;
+    padding: 1rem;
+}
+
+div.column-2-row p {
+    margin: 0;
+    padding: 0;
+}
+
+div.column-3-block {
+    margin: 2rem 0;
+    padding: 1rem;
+    border: 1px solid var(--nav-border);
+    border-radius: 10px;
+    background-color: var(--bubble-background);
+    display: flex;
+    flex-direction: row;
+}
+
+div.column-3-col {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    background-color: transparent;
+    place-content: space-evenly;
+}
+
+div.column-3-row {
+    display: flex;
+    flex-direction: row;
+    background-color: transparent;
+    padding: 1rem;
+}
+
+div.column-3-row p {
+    margin: 0;
+    padding: 0;
+}
+
+.tooltip {
+    position: absolute;
+    z-index: 1;
+    margin-left: 1rem;
+}
+
+.tooltip .tooltip-text {
+    padding: 0.5rem;
+    color: var(--bubble-color);
+    background-color: var(--bubble-background);
+    z-index: 2;
+    transition: opacity ease-in-out 0.15s;
+    opacity: 0;
+}
+
+.tooltip.active .tooltip-text {
+    padding: 0.5rem;
+    color: var(--bubble-color);
+    background-color: var(--bubble-background);
+    z-index: 2;
+    opacity: 1;
+}
+
+
+@keyframes bubble-dim {
+    to {
+        background-color: var(--bubble-link--hover-background);
+        color: var(--bubble-link-hover-color);
+    }
+}

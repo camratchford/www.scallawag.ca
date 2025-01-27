@@ -1,29 +1,56 @@
-const bubbleBlock = {
-    name: 'bubbleBlock',
-    level: 'block',                                     // Is this a block-level or inline-level tokenizer?
-    start(src) { return src.indexOf(" ()"); }, // Hint to Marked.js to stop and check for a match
+
+const bubbleInline = {
+    name: 'bubbleInline',
+    level: 'inline',
+    start(src) {
+        if (src.startsWith("()")) {
+            return false;
+        }
+        return src.indexOf("()");
+    },
     tokenizer(src, tokens) {
-        const rule = /((\(\))(?<=\(\))([\w\s]+)(?=\(\/\))(\(\/\)))/;    // Regex for the complete token, anchor to string start
+        const rule = /^((\(\))(?<=\(\))([\w\s]+)(?=\(\/\))(\(\/\)))/;
         const match = rule.exec(src);
-        if (match.indices) {
-            const token = {                                   // Token to generate
-                type: 'bubbleBlock',                          // Should match "name" above
-                raw: match[1],                                // The capture group encompassing the markup and text
-                text: match[3].trim(),                               // The capture group of just text
-                tokens: []                                    // Array where child inline tokens will be generated
+        if (match) {
+            const token = {
+                type: 'bubbleInline',
+                raw: match[1],
+                text: match[3],
+                tokens: []
             };
-            this.lexer.inline(token.text, token.tokens);    // Queue this data to be processed for inline tokens
+            this.lexer.inline(token.text, token.tokens);
             return token;
         }
     },
     renderer(token) {
-        return `<div class="bubble">${this.parser.parseInline(token.tokens)}</div>`; // parseInline to turn child tokens into HTML
+        return `<span class="bubble">${this.parser.parseInline(token.tokens)}</span>`;
     }
 };
 
+const bubbleBlock = {
+    name: 'bubbleBlock',
+    level: 'block',
+    start(src) {
+        window.source  = src;
+        return src.match(/(?<=^)\(\)/);
+    },
+    tokenizer(src, tokens) {
+        const rule = /^(\(\)(?<=\(\))([\w\W\s]+)(?=\(\/\))(\(\/\)))/;
+        const match = rule.exec(src);
+        if (match) {
+            const token = {
+                type: 'bubbleBlock',
+                raw: match[1],
+                text: match[2].trim(),
+                tokens: []
+            };
+            this.lexer.inline(token.text, token.tokens);
+            return token;
+        }
+    },
+    renderer(token) {
+        return `<div class="bubble">${this.parser.parseInline(token.tokens)}</div>`;
+    }
+};
 
-
-// marked.use({ extensions: [bubbleBlock] });
-
-// ^(\(\))(?:\n|$| )*(?<=\(\))[\w\s]+(?=\(\\\))(\(\\\))(?=\n|$| )+
-// (\(\))*(?<=\(\))[\w\s]+(?=\(\\\))(\(\\\))
+marked.use({ extensions: [bubbleInline, bubbleBlock] });

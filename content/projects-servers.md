@@ -1,4 +1,4 @@
 # Projects - Servers & More
 
-[Back to Projects](/?projects.md)
+[Back](/?previousPage)
 

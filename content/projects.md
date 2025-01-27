@@ -1,9 +1,12 @@
 # Projects
 
-<ul class="toc-list">
-<li class="toc-list--item"><a href="/?projects-work.md">Work Related Projects</a></li>
-<li class="toc-list--item"><a href="/?projects-programming.md">Programming Projects</a></li>
-<li class="toc-list--item"><a href="/?projects-electronics.md">Electronics Projects</a></li>
-<li class="toc-list--item"><a href="/?projects-servers.md">Servers, Networks, and Such</a></li>
-</ul>
 
+|==
+|= [Work related projects](/?projects-work.md)            =|= The stuff I got paid to do        =|
+|= [Programming Projects](/?projects-programming.md)      =|= Programming, for fun              =|
+
+==|
+
+
+[//]: # (|= [Electronics Projects]&#40;/?projects-electronics.md&#41;      =|= Electronic dohickeys              =|)
+[//]: # (|= [Servers, networking, and such]&#40;/?projects-servers.md&#41; =|= Enterprise infrastructure at home =|)
