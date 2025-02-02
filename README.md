@@ -38,7 +38,7 @@ As a result, my regex skills are now sharpened to a point.
    rendered. Because I'm preventing the default `navigate` event behaviour, I needed to restore some of the navigational features:
       - Rendering a markdown page: 
         - Makes a request to Nginx for the file specified, generating the HTML from its contents.
-      - Scrolling to an HTML ID: 
+      - Scrolling to an HTML ID:
         - Uses the `Event.scroll()` method to scroll the window the corresponding HTML ID.
       - Rendering the previously rendered markdown page: 
         - Calls the render function with the 'previous page' string as an argument. The current and previous page
@@ -51,13 +51,21 @@ A single HTML file, a lot of _vanilla_ JavaScript, some CSS, and the Markdown fi
 
 ### Built Using
 
-- [markedjs/marked](https://github.com/markedjs/marked): A fully client-side Markdown rendering solution.
-- [markedjs/marked-gfm-heading-id](https://github.com/markedjs/marked-gfm-heading-id): Marked plugin that generates HTML `id` attributes for each Markdown heading element.
-- [markedjs/marked-highlight](https://github.com/markedjs/marked-highlight): Marked plugin that generates the HTML `class` names attributes, necessary for syntax styling HTML `code` elements. 
-- [highlightjs/highlight.js](https://github.com/highlightjs/highlight.js): The module responsible for lexing, parsing, and detecting the language of the HTML `code` within the code elements.
-- [sindresorhus/github-markdown-css](https://github.com/sindresorhus/github-markdown-css): Serves as a very good starting point for styling Markdown pages. It is extended and modified separately with my own CSS.
-- [axios/axios](https://github.com/axios/axios): Performs asynchronous HTTPS requests, necessary for fetching Markdown and communicating with the PlantUML service.
-
+- [markedjs/marked](https://github.com/markedjs/marked): 
+  - A fully client-side Markdown rendering solution.
+- [markedjs/marked-gfm-heading-id](https://github.com/markedjs/marked-gfm-heading-id): 
+  - Marked plugin that generates HTML `id` attributes for each Markdown heading element.
+- [markedjs/marked-highlight](https://github.com/markedjs/marked-highlight): 
+  - Marked plugin that generates the HTML `class` names attributes, necessary for syntax styling HTML `code` elements. 
+- [highlightjs/highlight.js](https://github.com/highlightjs/highlight.js): 
+  - The module responsible for lexing, parsing, and detecting the language of the HTML `code` within the code elements.
+- [sindresorhus/github-markdown-css](https://github.com/sindresorhus/github-markdown-css): 
+  - Serves as a very good starting point for styling Markdown pages. It is extended and modified separately with my own CSS.
+- [axios/axios](https://github.com/axios/axios): 
+  - Performs asynchronous HTTPS requests, necessary for fetching Markdown and communicating with the PlantUML service.
+- [ryanoasis/nerd-fonts](https://github.com/ryanoasis/nerd-fonts):
+  - Specifically [JetBrainsMonoNerdFont](https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts/JetBrainsMono)
+  - Used for social icons
 
 ## Backend
 
