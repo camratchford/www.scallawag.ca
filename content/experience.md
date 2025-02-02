@@ -1,6 +1,6 @@
 # Professional Experience
 
-A PDF copy of my resume can be found [here](/media/Cameron_Ratchford-Resume.pdf)
+A PDF copy of my resume can be found [here](/media/Cameron_Ratchford-Resume.pdf).
 
 > Note: Many of my skills were acquired while working on [personal projects](/?projects-programming.md) and working on my [homelab](/?projects-servers.md).
 
@@ -40,8 +40,9 @@ the short-notice quick-turn-around nature of compliance requirements brought man
 
 Being part of security operations team at Cybera meant responding to the ever-growing demand from post-secondary and
 K-12 institution to enhance their organizational security, in a way that was both pragmatic and affordable. I was hired
-on at Cybera to develop and champion a new and ambitious project, [Miridor](/?projects-work.md#md-miridor) 
-(an Intrusion Detection System as a Service).
+on at Cybera to develop and champion a new and ambitious project, [Miridor](/?projects-work.md#md-miridor).
+
+{t:p a[href='/?projects-work.md#md-miridor'],an Intrusion Detection System, as a Service}
 
 - Build, develop, manage, monitor, and maintain technical infrastructure.
     - Python, Bash, PowerShell, GNU Make
@@ -57,7 +58,9 @@ on at Cybera to develop and champion a new and ambitious project, [Miridor](/?pr
 
 ### Technical Support Analyst – [Computer Modelling Group](https://www.cmgl.ca/) (CMG)
 > *Calgary, AB* <br>
-> *Jul 2019 – May 2021*
+> *Jul 2019 – May 2021* <br>
+> [Projects](/?projects-work.md#md-at-cmg)
+
 - VMware vSphere cluster administration.
 - Windows Server / Active Directory administration.
 - RHEL and CentOS 6 Linux systems administration.

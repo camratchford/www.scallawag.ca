@@ -9,8 +9,6 @@
   --base-text-weight-semibold: 600;
   --fontStack-monospace: ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas, Liberation Mono, monospace;
   --fgColor-accent: Highlight;
-  padding: 1.7vw 1.5vw 2vw 1.7vw;
-  min-height: calc(var(--main-height) - 2rem);
 }
 @media (prefers-color-scheme: dark) {
   .markdown-body, [data-theme="dark"] {
@@ -30,7 +28,7 @@
     --bgColor-neutral-muted: #656c7633;
     --bgColor-attention-muted: #bb800926;
     --borderColor-default: #3d444d;
-    --borderColor-muted: #3d444db3;
+    --borderColor-muted: rgba(118, 130, 151, 0.7);
     --borderColor-neutral-muted: #3d444db3;
     --borderColor-accent-emphasis: #1f6feb;
     --borderColor-success-emphasis: #238636;
@@ -71,6 +69,8 @@
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
   margin: 0;
+  padding: 1.7vw 1.5vw 2vw 1.7vw;
+  min-height: calc(var(--main-height) - 2rem);
   color: var(--fgColor-default);
   background-color: var(--bgColor-default);
   font-family: -apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji";
@@ -106,12 +106,11 @@
   background-color: transparent;
   color: var(--main-link-color);
   text-decoration: none;
+  transition: color 0.1s ease-in-out;
 }
 
 .markdown-body a:hover {
-  animation-name: color-shift;
-  animation-duration: 0.2s;
-  animation-fill-mode: both;
+  color: var(--brand-lightest);
 }
 
 .markdown-body abbr[title] {
@@ -135,6 +134,37 @@
   padding-bottom: .3em;
   font-size: 2em;
   border-bottom: 1px solid var(--borderColor-muted);
+}
+
+.markdown-body h3,
+.markdown-body h4,
+.markdown-body h5 {
+  display: block;
+  width: fit-content;
+  height: fit-content;
+  padding: 0;
+  font-weight: var(--base-text-weight-semibold, 600);
+  border-right: none;
+
+}
+
+
+.markdown-body h3:hover,
+.markdown-body h4:hover,
+.markdown-body h5:hover {
+  content: "";
+  height: 70%;
+  animation: shadow-inset-right 0.2s ease-in-out both;
+}
+
+@keyframes shadow-inset-right {
+  0% {
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+  }
+  100% {
+    padding-right: 5px;
+    box-shadow: 2px 0 0 var(--muted);
+  }
 }
 
 .markdown-body mark {
@@ -205,7 +235,7 @@
 .markdown-body [type=reset],
 .markdown-body [type=submit] {
   -webkit-appearance: button;
-  appearance: button;
+  appearance: auto;
 }
 
 .markdown-body [type=checkbox],
@@ -393,6 +423,14 @@
 .markdown-body ol ol ol {
   list-style-type: lower-alpha;
 }
+
+@media screen and (max-width: 500px) {
+  .markdown-body ul,
+  .markdown-body ol {
+    padding-left: 15px;
+  }
+}
+
 
 .markdown-body dd {
   margin-left: 0;

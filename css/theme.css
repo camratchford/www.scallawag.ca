@@ -8,7 +8,7 @@
     --grey-almost-white: #f1f1f1;
 
     /*Dark-Primary:*/
-    --brand-almost-black: #0b4836;
+    --brand-almost-black: #475a4b;
     --brand-darkest: #13644e;
     --brand-dark: #2fb397;
     --brand-primary: #2abfa1;
@@ -65,11 +65,11 @@
     --main-color: var(--grey-lightest);
     --main-border: var(--grey-light);
 
-    --main-link-color: var(--brand-dark);
-    --main-link-selected: var(--brand-primary);
+    --main-link-color: var(--brand-primary);
+    --main-link-selected: var(--brand-lightest);
 
     --nav-background: var(--grey-almost-black);
     --nav-color: var(--main-color);
     --nav-border: var(--grey-grey);
-    --nav-hover: var(--brand-primary);
+    --nav-hover: var(--brand-lightest);
 }

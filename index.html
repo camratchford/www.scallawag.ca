@@ -31,7 +31,7 @@
     <link rel="apple-touch-icon" href="https://www.scallawag.ca/img/favicon.png">
 
 </head>
-<body onload="init_page()">
+<body onload="initPage()">
 <div class="parent-container">
     <header class="header">
         <nav class="header-nav">
@@ -52,11 +52,20 @@
         <nav class="footer-nav">
             <p class="copyright">© Copyright 2025, Cameron Ratchford</p>
             <ul class="footer-navlist">
+                <!-- Icons are NerdFont unicode glyphs -->
                 <li class="footer-navlist--item"><a href="https://github.com/camratchford"></a></li>
                 <li class="footer-navlist--item"><a href="https://www.linkedin.com/in/cameron-ratchford/">󰌻</a></li>
                 <li class="footer-navlist--item"><a href="https://github.com/camratchford/www.scallawag.ca"></a></li>
-
             </ul>
+            <div class="tooltip" data-target="li.footer-navlist--item a[href='https://github.com/camratchford']">
+                <span class="tooltip-text">My GitHub profile</span>
+            </div>
+            <div class="tooltip" data-target="li.footer-navlist--item a[href='https://www.linkedin.com/in/cameron-ratchford/']">
+                <span class="tooltip-text">My LinkedIn page</span>
+            </div>
+            <div class="tooltip" data-target="li.footer-navlist--item a[href='https://github.com/camratchford/www.scallawag.ca']">
+                <span class="tooltip-text">Source code for this website</span>
+            </div>
         </nav>
     </footer>
 </div>
@@ -69,13 +78,15 @@
     <script src="js/third-party/marked/marked-gfm-heading-id.umd.js"></script>
     <script src="js/third-party/marked/moo.min.js"></script>
 
-    <!-- Markdown parser and extension -->
+    <!-- Markdown parser and extensions -->
     <script src="js/config.js"></script>
-    <script src="js/bubble.js"></script>
-    <script src="js/column_block.js"></script>
-    <script src="js/tooltip.js"></script>
+    <script src="js/marked-extensions/bubble.js"></script>
+    <script src="js/marked-extensions/column_block.js"></script>
+    <script src="js/marked-extensions/tooltip.js"></script>
+    <script src="js/marked-extensions/button.js"></script>
     <script src="js/markdown.js"></script>
 
+    <script src="js/marked-extensions/plantuml.js"></script>
     <script src="js/navigation.js"></script>
     <script src="js/scripts.js"></script>
     <script src="js/components.js"></script>

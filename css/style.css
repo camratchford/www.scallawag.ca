@@ -8,13 +8,18 @@
   font-family: "JetBrainsMonoNerdFont";
 }
 
+:root {
+  --header-height: calc(5vh + 1rem);
+  --footer-height: 10vh;
+  --main-height: calc(100vh - var(--header-height) - var(--footer-height));
+  --nav-gap: 1rem;
+}
+
+
 @media screen and (min-width: 500px) {
   :root {
     --content-min-width: 50vw;
     --content-max-width: 85vw;
-    --header-height: 5vh;
-    --footer-height: 10vh;
-    --main-height: calc(100vh - var(--header-height) - var(--footer-height))
   }
 }
 
@@ -22,10 +27,12 @@
   :root {
     --content-min-width: 50vw;
     --content-max-width: 50vw;
-    --header-height: 5vh;
-    --footer-height: 10vh;
-    --main-height: calc(100vh - var(--header-height) - var(--footer-height))
+    --nav-gap: 2rem;
   }
+}
+
+:root {
+  --font-size: calc(14px + 2 * ((100vw - 300px) / (1600 - 300)));
 }
 
 html {
@@ -49,15 +56,14 @@ html {
 
 
 body {
-  font-size: calc(14px + 2 * ((100vw - 300px) / (1600 - 300)));
-  height: 100vh;
+  font-size: var(--font-size);
+  height: 100%;
+  background: var(--main-background);
 }
-
-
 
 body div.parent-container {
   width: 100%;
-  height: 100vh;
+  height: 100%;
   background: var(--main-background);
   display: flex;
   flex-direction: column;
@@ -84,7 +90,7 @@ nav.header-nav {
 ul.header-navlist {
   display: flex;
   flex-direction: row;
-  gap: 2rem;
+  gap: var(--nav-gap);
   align-content: center;
   height: 100%;
   background: transparent;
@@ -107,15 +113,15 @@ li.header-navlist--item a {
   cursor: pointer;
   font-size: 1.3em;
   background: transparent;
+  transition: color 0.2s ease-in-out;
 }
 
 li.header-navlist--item a:focus,
 li.header-navlist--item a:active,
 li.header-navlist--item a:hover {
-  animation-name: color-shift;
-  animation-duration: 0.4s;
-  animation-fill-mode: both;
+  color: var(--brand-lightest);
 }
+
 
 main {
   display: flex;
@@ -139,13 +145,15 @@ section {
   scrollbar-width: none;
 }
 
+/* Rest is handled by markdown.css, markdown-codeblocks.css, content.css */
 
 footer.footer {
   width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  height: var(--footer-height);
+  min-height: var(--footer-height);
+  max-height: var(--footer-height);
   background: var(--nav-background);
   border-top: 1px solid var(--nav-border);
   align-items: center;
@@ -160,8 +168,16 @@ nav.footer-nav {
   height: 100%;
   min-width: var(--content-min-width);
   max-width: var(--content-max-width);
-  padding-top: 4rem;
 }
+
+nav.footer-nav p {
+  margin-left: 1rem;
+}
+
+nav.footer-nav ul {
+  margin-right: 1rem;
+}
+
 
 ul.footer-navlist {
   height: 100%;
@@ -176,6 +192,7 @@ li.footer-navlist--item p {
   color: var(--muted);
 }
 
+
 li.footer-navlist--item a {
   font-family: JetbrainsMonoNerdFont;
   color: var(--muted);
@@ -184,23 +201,23 @@ li.footer-navlist--item a {
   cursor: pointer;
   font-size: 1.3em;
   background: transparent;
+  transition: color 0.2s ease-in-out;
 }
 
 li.footer-navlist--item a:focus,
 li.footer-navlist--item a:active,
 li.footer-navlist--item a:hover {
-  animation-name: color-shift;
-  animation-duration: 0.2s;
-  animation-fill-mode: both;
+  color: var(--brand-almost-white);
 }
 
 .selected {
-  animation-name: color-shift;
-  animation-duration: 0.2s;
-  animation-fill-mode: both;
+  transition: color 0.2s ease-in-out;
+  color: var(--brand-almost-white);
 }
 
 @keyframes color-shift {
-  to {color: var(--brand-almost-white);}
+  0% {color: var(--muted);}
+  0% {color: var(--brand-almost-black);}
+  100% {color: var(--brand-almost-white);}
 }
 

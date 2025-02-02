@@ -21,7 +21,7 @@ queryTextFunctionMap.set("previousPage", previousPage);
 window.navigation.addEventListener("navigate", (event) => {
     let url = event.destination.url;
     let queryText = url.split("/").slice(-1)[0];
-    let preventDefault = false;
+
     if (queryText[0] === "?") {
         // Ensure that headings are scrolled to after rendering markdown content
         let headingLink = "";
@@ -30,16 +30,11 @@ window.navigation.addEventListener("navigate", (event) => {
             queryText = splitQueryText[0];
             headingLink = `#${splitQueryText[1]}`
         }
-        // If queryText is a function, execute it.
-
         if (queryTextFunctionMap.has(queryText.slice(1))) {
-            console.log("Hello")
             let queryTextFunction = queryTextFunctionMap.get(queryText.slice(1))
             queryTextFunction()
-            preventDefault = true;
         } else if (queryText.slice(-3) === ".md") {
             window.renderContent(queryText.slice(1, -3), headingLink);
-            preventDefault = true;
         }
         event.preventDefault();
     }

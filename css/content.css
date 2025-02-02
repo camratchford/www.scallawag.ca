@@ -7,22 +7,26 @@
 }
 
 div.markdown-body img[src="img/mtg.png"] {
-    min-width: calc(var(--content-max-width) * 0.3);
-    max-width: calc(var(--content-max-width) * 0.3);
+    max-width: 30%;
 }
 
-@media screen and (max-width: 600px) {
+p {
+    padding-right: 2rem;
+}
+
+
+@media screen and (max-width: 500px) {
     div.markdown-body img[src="img/mtg.png"] {
-        min-width: calc(var(--content-max-width) * 0.7);
+        max-width: 60%;
+    }
+
+    p {
+        padding-right: 2vw;
     }
 }
 
 div.markdown-body details {
     max-width: var(--content-max-width);
-}
-
-p {
-    padding-right: 5rem;
 }
 
 .bubble {
@@ -146,10 +150,27 @@ div.column-3-row p {
     opacity: 1;
 }
 
+button.md-button {
+    background-color: var(--main-background);
+    color: var(--main-color);
+    padding: 0.1rem 0.5rem;
+    border: 1px solid var(--main-border);
+    border-radius: 5px;
+}
+
+button.md-button a {
+    color: var(--main-color);
+}
 
 @keyframes bubble-dim {
     to {
         background-color: var(--bubble-link--hover-background);
         color: var(--bubble-link-hover-color);
     }
+}
+
+img.uml {
+    display: block;
+    width: 100%;
+    margin: var(--font-size) 0;
 }
