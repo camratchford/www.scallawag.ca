@@ -1,3 +1,11 @@
+/*!
+  Name: Markdown
+  Author: Cam Ratchford
+  Built upon:
+    - https://github.com/sindresorhus/github-markdown-css/blob/bedb4b771f5fa1ae117df597c79993fd1eb4dff0/github-markdown.css
+      License: https://github.com/sindresorhus/github-markdown-css/blob/bedb4b771f5fa1ae117df597c79993fd1eb4dff0/license
+*/
+
 .markdown-body {
   --base-size-4: 0.25rem;
   --base-size-8: 0.5rem;

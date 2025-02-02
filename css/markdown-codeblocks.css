@@ -1,9 +1,11 @@
 /*!
   Name: Markdown-Codeblocks
-  Author: scallawag.ca
-  Inspired, built upon:
-    - Jetbrains Darkula Theme
-    - stackoverflow.com Dark Theme
+  Author: Cam Ratchford
+  Inspired by:
+     - Jetbrains' Darcula Theme
+  Built upon:
+    - https://github.com/highlightjs/highlight.js/blob/d301848ccf1354dc8845e00e7aee062d60c94437/src/styles/stackoverflow-dark.css
+      License: https://github.com/highlightjs/highlight.js/blob/d301848ccf1354dc8845e00e7aee062d60c94437/LICENSE
 */
 
 pre code.markdown-codeblocks {
