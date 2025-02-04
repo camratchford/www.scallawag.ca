@@ -1,6 +1,6 @@
 # Projects - Work
 
-[Back](/?previousPage)
+[Back](/?previousPage=1)
 
 ## At Shell
 

@@ -52,14 +52,20 @@ function setLinkAttrs() {
     });
 }
 
+function setPageID() {
+    let mainHeading = document.querySelector("h1");
+    let markdownBody = document.querySelector("div.markdown-body");
+    markdownBody.id = mainHeading.innerText.toLowerCase().replace(/( +)(-+)( +)/, "-");
+}
+
 function renderContent(pageName, headingLink) {
     instance.request({
-        url:  `content/${pageName}.md`,
+        url:  `content/${pageName}`,
         method: "GET",
         data: {},
         headers: {}
     }).then(function (response) {
-        if (response.data ) {
+        if (response.data) {
             let curPage = localStorage.getItem("currentPage");
             localStorage.setItem("previousPage", curPage)
             localStorage.setItem("currentPage", pageName)
@@ -76,6 +82,7 @@ function renderContent(pageName, headingLink) {
                 let headingToScrollTo =  document.getElementById(`${headingLink.slice(1)}`);
                 headingToScrollTo.scrollIntoView("alignToTop")
             }
+            setPageID();
             markdownContent.dispatchEvent(mdRenderedEvent);
         }
         else {

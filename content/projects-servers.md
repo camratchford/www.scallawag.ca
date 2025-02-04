@@ -1,6 +1,6 @@
 # Projects - Servers & More
 
-[Back](/?previousPage)
+[Back](/?previousPage=1)
 
 
 @startuml

@@ -1,3 +1,4 @@
+
 async function encodeUML(uml_text) {
     let data;
     try {
@@ -42,9 +43,17 @@ const plantuml = {
     renderer(token) {
         let placeholderId = `uml-${Math.random().toString(36).substr(2, 9)}`;
         encodeUML(token.uml).then(result => {
-            document.getElementById(placeholderId).src = `https://www.scallawag.ca/plantuml/${result.png}`;
+            let source = `https://www.scallawag.ca/plantuml/${result.png}`
+            let img = document.getElementById(placeholderId)
+            img.src = source;
+            img.parentElement.href = source;
+
         });
-        return `<img src="" id="${placeholderId}" class="uml"></img>`;
+        return `
+        <a href="">
+            <img src="" id="${placeholderId}" class="uml">
+        </a>
+        `
     },
 };
 

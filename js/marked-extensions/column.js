@@ -33,12 +33,18 @@ const columnBlockTwo = {
         let rightRows = [];
 
         token.leftRow.forEach( text => {
-            let row = columnRow.replace("rowText", text);
-            leftRows.push(row);
+            if (text) {
+                let row = columnRow.replace("rowText", text);
+                leftRows.push(row);
+            }
+
         })
         token.rightRow.forEach( text => {
-            let row = columnRow.replace("rowText", text);
-            rightRows.push(row);
+            if (text) {
+                let row = columnRow.replace("rowText", text);
+                rightRows.push(row);
+            }
+
         })
 
         return `
@@ -91,16 +97,24 @@ const columnBlockThree = {
         let rightRows = [];
 
         token.leftRow.forEach( text => {
-            let row = columnRow.replace("rowText", text);
-            leftRows.push(row);
+            if (text) {
+                let row = columnRow.replace("rowText", text);
+                leftRows.push(row);
+            }
+
         })
         token.middleRow.forEach( text => {
-            let row = columnRow.replace("rowText", text);
-            middleRows.push(row);
+            if (text) {
+                let row = columnRow.replace("rowText", text);
+                middleRows.push(row);
+            }
         })
         token.rightRow.forEach( text => {
-            let row = columnRow.replace("rowText", text);
-            rightRows.push(row);
+            if (text) {
+                let row = columnRow.replace("rowText", text);
+                rightRows.push(row);
+            }
+
         })
 
         return `

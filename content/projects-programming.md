@@ -1,7 +1,7 @@
 
 # Projects - Programming
 
-[Back](/?previousPage)
+[Back](/?previousPage=1)
 
 ## Python Projects
 

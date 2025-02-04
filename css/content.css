@@ -6,24 +6,35 @@
     --bubble-link--hover-background: var(--grey-dark);
 }
 
-div.markdown-body img[src="img/mtg.png"] {
-    max-width: 30%;
+/*div.markdown-body img[src="img/mtg.png"] {*/
+/*    max-width: 30%;*/
+/*}*/
+
+/*p {*/
+/*    padding-right: 2rem;*/
+/*}*/
+
+div.column-2-row p img {
+    align-self: flex-start;
+    width: 50%;
 }
 
-p {
-    padding-right: 2rem;
+div.column-3-row p img {
+    width: 66%;
 }
-
 
 @media screen and (max-width: 500px) {
-    div.markdown-body img[src="img/mtg.png"] {
-        max-width: 60%;
+    div.column-2-row p img,
+    div.column-3-row p img {
+        width: 100%;
     }
 
     p {
         padding-right: 2vw;
     }
 }
+
+
 
 div.markdown-body details {
     max-width: var(--content-max-width);
@@ -75,14 +86,13 @@ div.column-2-block {
     background-color: var(--bubble-background);
     display: flex;
     flex-direction: row;
+    align-items: center;
 }
 
 div.column-2-col {
     display: flex;
     flex-direction: column;
-    flex-grow: 1;
     background-color: transparent;
-    place-content: space-evenly;
 }
 
 div.column-2-row {
@@ -92,9 +102,11 @@ div.column-2-row {
     padding: 1rem;
 }
 
-div.column-2-row p {
+div.column-2-row > p {
     margin: 0;
     padding: 0;
+    background-color: transparent;
+    width: 100%;
 }
 
 div.column-3-block {
@@ -105,6 +117,7 @@ div.column-3-block {
     background-color: var(--bubble-background);
     display: flex;
     flex-direction: row;
+
 }
 
 div.column-3-col {
@@ -115,10 +128,19 @@ div.column-3-col {
     place-content: space-evenly;
 }
 
+div.column-3-col:last-child {
+    display: flex;
+    flex-direction: column;
+    background-color: transparent;
+    width: 100%;
+    place-content: space-evenly;
+}
+
 div.column-3-row {
     display: flex;
     flex-direction: row;
     background-color: transparent;
+    width: auto;
     padding: 1rem;
 }
 

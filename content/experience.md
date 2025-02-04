@@ -2,14 +2,14 @@
 
 A PDF copy of my resume can be found [here](/media/Cameron_Ratchford-Resume.pdf).
 
-> Note: Many of my skills were acquired while working on [personal projects](/?projects-programming.md) and working on my [homelab](/?projects-servers.md).
+> Note: Many of my skills were acquired while working on [personal projects](/?md=projects-programming.md) and working on my [homelab](/?md=projects-servers.md).
 
 ## Work Experience
 
 ### IT Automation Specialist – [Shell](https://www.shell.ca/)
 > *Calgary, AB* <br>
 > *Jan 2023 – Present* <br>
-> [Projects](/?projects-work.md#md-at-shell)
+> [Projects](/?md=projects-work.md#md-at-shell)
 
 Working in the 'Mobility Retail' business unit (Gas Stations) in the 'Site Systems' team, we were responsible for
 ensuring the continuous operation of retail systems software and hardware. In effect, we decide what software is installed
@@ -36,11 +36,11 @@ the short-notice quick-turn-around nature of compliance requirements brought man
 ### Systems Administrator – [Cybera](https://www.cybera.ca/)
 > *Calgary, AB* <br>
 > *May 2021 – Dec 2022* <br>
-> [Projects](/?projects-work.md#md-at-cybera)
+> [Projects](/?md=projects-work.md&id=md-at-cybera)
 
 Being part of security operations team at Cybera meant responding to the ever-growing demand from post-secondary and
 K-12 institution to enhance their organizational security, in a way that was both pragmatic and affordable. I was hired
-on at Cybera to develop and champion a new and ambitious project, [Miridor](/?projects-work.md#md-miridor).
+on at Cybera to develop and champion a new and ambitious project, [Miridor](/?md=projects-work.md&id=md-miridor).
 
 {t:p a[href='/?projects-work.md#md-miridor'],an Intrusion Detection System, as a Service}
 
@@ -59,7 +59,7 @@ on at Cybera to develop and champion a new and ambitious project, [Miridor](/?pr
 ### Technical Support Analyst – [Computer Modelling Group](https://www.cmgl.ca/) (CMG)
 > *Calgary, AB* <br>
 > *Jul 2019 – May 2021* <br>
-> [Projects](/?projects-work.md#md-at-cmg)
+> [Projects](/?md=projects-work.md&id=md-at-cmg)
 
 - VMware vSphere cluster administration.
 - Windows Server / Active Directory administration.
