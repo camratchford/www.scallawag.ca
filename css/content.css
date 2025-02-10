@@ -6,6 +6,10 @@
     --bubble-link--hover-background: var(--grey-dark);
 }
 
+a:any-link {
+    position: relative;
+}
+
 /*div.markdown-body img[src="img/mtg.png"] {*/
 /*    max-width: 30%;*/
 /*}*/
@@ -151,7 +155,6 @@ div.column-3-row p {
 
 .tooltip {
     position: absolute;
-    z-index: 1;
     margin-left: 1rem;
 }
 
@@ -159,17 +162,27 @@ div.column-3-row p {
     padding: 0.5rem;
     color: var(--bubble-color);
     background-color: var(--bubble-background);
-    z-index: 2;
     transition: opacity ease-in-out 0.15s;
     opacity: 0;
 }
+
+.tooltip,
+.tooltip .tooltip-text,
+.tooltip .tooltip-text img {
+    z-index: 0;
+}
+
 
 .tooltip.active .tooltip-text {
     padding: 0.5rem;
     color: var(--bubble-color);
     background-color: var(--bubble-background);
-    z-index: 2;
     opacity: 1;
+}
+
+.tooltip.active {
+    position: absolute;
+    z-index: 3;
 }
 
 button.md-button {
@@ -195,4 +208,15 @@ img.uml {
     display: block;
     width: 100%;
     margin: var(--font-size) 0;
+}
+
+span#neat {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+img.img-neat {
+    height: 10vh;
+    position: relative;
+    z-index: 0;
 }
