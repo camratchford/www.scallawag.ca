@@ -8,7 +8,7 @@ A PDF copy of my resume can be found [here](/media/Cameron_Ratchford-Resume.pdf)
 
 ### IT Automation Specialist – [Shell](https://www.shell.ca/)
 > *Calgary, AB* <br>
-> *Jan 2023 – Present* <br>
+> *Jan 2023 – Dec 2024* <br>
 > [Projects](/?md=projects-work.md#md-at-shell)
 
 Working in the 'Mobility Retail' business unit (Gas Stations) in the 'Site Systems' team, we were responsible for
