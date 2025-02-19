@@ -10,8 +10,8 @@ const instance = axios.create({
 const markdownContent = document.querySelector("section.content div.markdown-body");
 
 if (! localStorage.getItem("currentPage")) {
-    localStorage.setItem("currentPage", "about")
-    localStorage.setItem("previousPage", "about")
+    localStorage.setItem("currentPage", "about.md")
+    localStorage.setItem("previousPage", "about.md")
 }
 
 window.mdContent = "";
